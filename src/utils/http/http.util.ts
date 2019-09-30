@@ -2,7 +2,6 @@ import axios, { AxiosInstance } from 'axios';
 import { IHttpRequest } from './http.interface';
 
 const axiosInstance: AxiosInstance = axios.create({
-    // baseURL: `https://${getEnvUrl()}.pdax.ph`,
     headers: {
       'Content-Type': 'application/json',
     },

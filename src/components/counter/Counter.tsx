@@ -5,8 +5,8 @@ import { IRootReducerInterface } from '../../interfaces/root.interface';
 
 
 const Counter: React.FC = () => {
-  const count = useSelector(({counterReducer}: IRootReducerInterface) => {
-    return counterReducer.count
+  const count = useSelector(({counter}: IRootReducerInterface) => {
+    return counter.count
   });
   const dispatch = useDispatch();
 
