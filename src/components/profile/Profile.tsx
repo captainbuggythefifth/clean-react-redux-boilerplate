@@ -16,6 +16,8 @@ const Profile: React.FC = () => {
         dispatch(profileActionGet())
     }, [])
 
+    console.log("profile: ", profile);
+
   return (
     <div>
       ALALALLAH!

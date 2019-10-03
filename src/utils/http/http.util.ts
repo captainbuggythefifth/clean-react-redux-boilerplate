@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import { IHttpRequest } from './http.interface';
 
+
 const axiosInstance: AxiosInstance = axios.create({
     headers: {
       'Content-Type': 'application/json',
