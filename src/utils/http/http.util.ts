@@ -10,35 +10,24 @@ const axiosInstance: AxiosInstance = axios.create({
 
 export const ReactHttpRequest: IHttpRequest = {
     get: (url: string): Promise<any> => {
-      const config = {
-      };
-      return axiosInstance.get(url, config);
+      /* try {
+        return axiosInstance.get(url)
+      } catch (e) {
+        return Promise.reject(e)
+      } */
+      return axiosInstance.get(url)
     },
     post: (url: string, body: object): Promise<any> => {
-      const config = {
-      };
-      return axiosInstance.post(url, body, config);
+      return axiosInstance.post(url, body);
     },
     delete: (url: string): Promise<any> => {
-      const config = {
-      };
-      return axiosInstance.delete(url, config);
+      return axiosInstance.delete(url);
     },
     put: (url: string, body: object): Promise<any> => {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      };
-      return axiosInstance.put(url, body, config);
+      return axiosInstance.put(url, body);
     },
     patch: (url: string, body: object): Promise<any> => {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      };
-      return axiosInstance.patch(url, body, config);
+      return axiosInstance.patch(url, body);
     },
   };
   
