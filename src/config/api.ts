@@ -1,0 +1,1 @@
+export const API_PROFILE = 'https://randomuser.me/api/';
