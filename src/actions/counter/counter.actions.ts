@@ -1,15 +1,12 @@
 import { COUNTER_ACTION_TYPE_CHANGE_COUNT } from "./counter.action.types";
+import { IDispatchActionPayload } from "../../interfaces/common.interface";
 
-interface IAction {
-  type: string,
-  payload: any
-}
-  const counterActionIncrement = (count: number): IAction => ({
+  const counterActionIncrement = (count: number): IDispatchActionPayload => ({
     type: COUNTER_ACTION_TYPE_CHANGE_COUNT,
     payload: count + 1
   });
   
-  const counterActionDecrement = (count: number): IAction => ({
+  const counterActionDecrement = (count: number): IDispatchActionPayload => ({
     type: COUNTER_ACTION_TYPE_CHANGE_COUNT,
     payload: count - 1
   });

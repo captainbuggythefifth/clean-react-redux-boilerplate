@@ -42,3 +42,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+References
+    React Redux [Documentation](https://react-redux.js.org/)
+    Clean React Redux Functional Component [Documentation](https://medium.com/swlh/clean-up-redux-code-with-react-redux-hooks-71587cfcf87a)
+    

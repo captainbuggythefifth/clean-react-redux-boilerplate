@@ -19,23 +19,18 @@ const Routes: React.FC = () => {
         authenticationPath: URL_LOGIN_PAGE,
       };
 
-    
+      const routes = routeList.map((route: IRoute) => {
+        if (route.isPrivate) {
+            return <ProtectedRoute exact={true} path={route.path} component={route.component} {...defaultProtectedRouteProps} key={route.path}/>
+        }
 
-        let privateRoutes = routeList.map((route: IRoute) => {
-            if (route.isPrivate) return <ProtectedRoute exact={true} path={route.path} component={route.component} {...defaultProtectedRouteProps} key={route.path}/>
-        });
-
-        let routes = routeList.map((route: IRoute) => {
-            if (!route.isPrivate) return <Route path={route.path} component={route.component} key={route.path} />
-        });
-
-         console.log("rerender");
+        return <Route path={route.path} component={route.component} key={route.path} />
+    });
 
 
     return (
         <Router history={history}>
             <Switch>
-                {privateRoutes}
                 {routes}
                 <Route component={NotFound} />
             </Switch>

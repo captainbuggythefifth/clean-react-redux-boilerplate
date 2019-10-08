@@ -1,20 +1,20 @@
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosResponse, AxiosError } from 'axios';
 import { IHttpRequest } from './http.interface';
-
 
 const axiosInstance: AxiosInstance = axios.create({
     headers: {
       'Content-Type': 'application/json',
-    },
+    }
+  });
+
+  axiosInstance.interceptors.response.use((response: AxiosResponse) => response, (error: AxiosError) => {
+    console.log("error: ", error);
+    // alert("error");
+    return Promise.reject(error);
   });
 
 export const ReactHttpRequest: IHttpRequest = {
     get: (url: string): Promise<any> => {
-      /* try {
-        return axiosInstance.get(url)
-      } catch (e) {
-        return Promise.reject(e)
-      } */
       return axiosInstance.get(url)
     },
     post: (url: string, body: object): Promise<any> => {
