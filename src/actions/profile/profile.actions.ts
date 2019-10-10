@@ -5,7 +5,7 @@ import { Dispatch } from "redux";
 import { IDispatchActionPayload } from "../../interfaces/common.interface";
 
 
-  const profileActionGet = () => {
+  const profileActionGet = async (apiStringUrl?: string) => {
     
     return async (dispatch: Dispatch<IDispatchActionPayload>) => {
         dispatch({
@@ -13,7 +13,7 @@ import { IDispatchActionPayload } from "../../interfaces/common.interface";
           payload: true
         });
         try {
-          const profile = await ReactHttpRequest.get(API_PROFILE);
+          const profile = await ReactHttpRequest.get(apiStringUrl ? apiStringUrl : API_PROFILE);
           dispatch({
               type: PROFILE_ACTION_TYPE_GET,
               payload: profile.data.results[0]
